@@ -1,0 +1,812 @@
+/* PÁGINA DE INICIO */
+/* Fondo con imagen que cubre toda la pantalla */
+.home-body {
+    background: url('/assets/dos.png') center/cover no-repeat fixed;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Barra de arriba con el logo, el buscador y el menú */
+.navbar-landing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 25px;
+    background-color: #81c2ea;
+}
+
+.logo-landing {
+    font-family: serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #2d3436;
+}
+
+.search-box-landing {
+    display: flex;
+    align-items: center;
+    background-color: #6bb0dc;
+    border: 1px solid #333;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.search-box-landing input {
+    border: none;
+    background: transparent;
+    padding: 4px 10px;
+    outline: none;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.search-box-landing input::placeholder {
+    color: #555;
+}
+
+.search-btn-icon {
+    background: transparent;
+    border: none;
+    border-left: 1px solid #333;
+    padding: 4px 8px;
+    cursor: pointer;
+    color: #333;
+}
+
+.menu-landing-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #2d3436;
+}
+
+/* Menú con los enlaces de Home, About, Login y Sign Up */
+.top-nav-landing {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 40px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.top-nav-landing a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.top-nav-landing a:hover {
+    opacity: 0.8;
+}
+
+/* Bienvenida con el título AGROALERTAS y el botón SEGUIR */
+.hero-landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4.2rem;
+    font-family: serif;
+    color: #ffffff;
+    letter-spacing: 4px;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-text {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin: 10px 0 25px 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn-seguir {
+    display: inline-block;
+    background-color: #3bbbf5;
+    color: #ffffff;
+    padding: 10px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-seguir:hover {
+    background-color: #1a9ee0;
+    transform: translateY(-2px);
+}
+
+
+/* ESTILOS GENERALES */
+/* Quita los márgenes que trae el navegador y pone la misma letra en todo */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #74b9ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* BARRA DE ARRIBA DE LAS DEMÁS PÁGINAS */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #74b9ff;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-box input {
+    border: none;
+    padding: 5px 10px;
+    background: transparent;
+    outline: none;
+}
+
+.search-btn, .menu-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+}
+
+.user-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* Flecha para volver a la página anterior */
+.back-btn {
+    color: #333;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn:hover {
+    color: #0984e3;
+}
+
+
+/* LOGIN Y REGISTRO */
+/* La pantalla se divide en dos: la imagen a un lado y el formulario al otro.
+   El ancho de cada mitad lo maneja Bootstrap con Col */
+.login-container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.login-image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.hero-img {
+    max-width: 80%;
+    height: auto;
+}
+
+.login-form-section {
+    background-color: #00a8ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+}
+
+.login-form-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Aviso de contraseña incorrecta. Con la clase hidden no se ve */
+.alert-box {
+    position: absolute;
+    top: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 80%;
+}
+
+.alert-box.hidden {
+    display: none;
+}
+
+.alert-icon {
+    font-size: 1.8rem;
+    color: #e74c3c;
+}
+
+.alert-content h3 {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+
+.alert-content p {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+}
+
+/* Formularios de login y registro */
+#form-login {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#form-registro {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Se llama grupo-campo porque Bootstrap ya usa el nombre input-group */
+.grupo-campo input {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    background-color: #f5f5f5;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* El ojo queda encima del campo de la contraseña, a la derecha */
+.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.btn-submit {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 25px;
+    border: 2px solid #000;
+    background-color: #74b9ff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0984e3;
+    color: #fff;
+}
+
+/* Enlaces de olvidé mi contraseña y regístrate */
+.login-links {
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-links a {
+    color: #000;
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+/* MAPA DE ARRIBA */
+.map-banner {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 2px solid #333;
+}
+
+.map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* SELECCIÓN DE ROL */
+/* Tarjetas de agrónomo, gerencia y productor */
+.roles-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.role-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    width: 260px;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Al pasar el mouse la tarjeta sube un poco */
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.role-card h3 {
+    font-size: 1.5rem;
+    font-family: serif;
+    margin-top: 5px;
+}
+
+
+/* CREAR ALERTA */
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.form-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px 30px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.form-card h2 {
+    text-align: center;
+    font-family: serif;
+    color: #2d3436;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.form-card label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2d3436;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.form-card textarea {
+    resize: vertical;
+}
+
+/* Tipo de evento y riesgo van uno al lado del otro */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .grupo-campo {
+    flex: 1;
+}
+
+/* Botón rojo de guardar la alerta */
+.btn-alerta {
+    background-color: #d63031;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-alerta:hover {
+    background-color: #c0392b;
+}
+
+.vista-alerta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 20px;
+    flex-wrap: wrap;
+}
+
+/* Imagen del pronóstico del tiempo */
+.weather-card-section {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+
+/* ALERTA DEL PRODUCTOR */
+/* Fondo azul claro de las páginas de alerta y notificaciones */
+.alerta-page-bg {
+    background-color: #81c2ea;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+/* Banner con el mapa de fondo y el título de la alerta */
+.banner-lluvia {
+    background: url('/assets/mapa-banner.png') center/cover no-repeat;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.banner-title-box h1 {
+    font-size: 2.2rem;
+    font-family: serif;
+    color: #000;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+.alerta-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Calendario de 7 columnas, una por cada día de la semana */
+.calendar-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.month-title {
+    font-size: 2.5rem;
+    font-family: serif;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.day-head {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* Tarjetas blancas de la alerta y de las acciones */
+.cards-section {
+    display: flex;
+    gap: 20px;
+    flex: 1.2;
+    min-width: 320px;
+}
+
+.card-blanca {
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    text-align: center;
+}
+
+.card-title-red {
+    color: #bd1c1c;
+    font-size: 1.5rem;
+    font-family: serif;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.action-list {
+    text-align: left;
+    padding-left: 15px;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.action-list li {
+    margin-bottom: 8px;
+}
+
+.btn-card-blue {
+    background-color: #3bbbf5;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.btn-card-blue:hover {
+    background-color: #1a9ee0;
+}
+
+/* Texto SMS en la esquina de la tarjeta */
+.sms-link {
+    position: absolute;
+    bottom: 5px;
+    right: 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #000;
+}
+
+
+/* NOTIFICACIONES */
+.navbar-notif {
+    background-color: #81c2ea;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* La página se divide en dos columnas iguales */
+.notificaciones-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 30px 60px 50px 60px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: start;
+}
+
+/* Columna izquierda con el envío por WhatsApp */
+.notif-col-left h2 {
+    font-size: 2.4rem;
+    color: #1a252c;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+.notif-desc {
+    font-size: 1.25rem;
+    color: #1a252c;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* Botones rojos de enviar */
+.btn-red {
+    background-color: #ff5252;
+    color: #ffffff;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-red:hover {
+    transform: scale(1.03);
+    background-color: #ff3838;
+}
+
+.whatsapp-box {
+    margin-bottom: 25px;
+}
+
+.img-whatsapp {
+    width: 320px;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.alt-channel {
+    font-size: 1.2rem;
+    color: #1a252c;
+    line-height: 1.4;
+}
+
+/* Columna derecha con la vista previa del mensaje */
+.notif-col-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.world-box {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.img-world {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    border-radius: 18px;
+    display: block;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.preview-text-group h3 {
+    font-size: 2rem;
+    color: #1a252c;
+    margin: 0 0 16px 0;
+    font-weight: 800;
+}
+
+.preview-msg {
+    font-size: 1.3rem;
+    color: #1a252c;
+    line-height: 1.5;
+    margin: 0 0 25px 0;
+    font-weight: 600;
+}
+
+.btn-sms-fix {
+    padding: 14px 45px;
+}
+
+
+/* AJUSTES PARA REACT */
+/* El root y .pagina hacen lo que antes hacía el body */
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bootstrap cambia los títulos y párrafos, esto los deja como estaban */
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+h1, h2, h3, p, ol {
+    margin-bottom: 0;
+}
