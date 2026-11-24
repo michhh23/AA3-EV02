@@ -1,18 +1,41 @@
+// useState guarda la fecha que se escoge y el mensaje de error
+import { useState } from 'react';
 // los campos del formulario
 import { Form } from 'react-bootstrap';
 // Link para ir a otra página y useNavigate para cambiar de página desde el código
 import { Link, useNavigate } from 'react-router-dom';
 
+// FECHA DE HOY
+// Devuelve la fecha de hoy en el mismo formato del campo de fecha, por ejemplo 2026-11-23
+function fechaDeHoy() {
+  const hoy = new Date();
+  const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+  const dia = String(hoy.getDate()).padStart(2, '0');
+  return `${hoy.getFullYear()}-${mes}-${dia}`;
+}
+
 // PANTALLA PARA CREAR ALERTA (agrónomo)
 // El agrónomo llena el formulario con el título, el tipo de evento,
-// el riesgo, la ubicación y las recomendaciones para el productor
+// el riesgo, la ubicación, la fecha y las recomendaciones para el productor
 function CrearAlerta() {
+  // Fecha del evento que se escoge y su mensaje de error
+  const [fecha, setFecha] = useState('');
+  const [errorFecha, setErrorFecha] = useState('');
   // Sirve para mandar al usuario a otra página
   const navegar = useNavigate();
 
   // GUARDAR LA ALERTA
+  // Primero revisa que la fecha no sea anterior a hoy.
+  // Las fechas se comparan como texto porque tienen el formato año-mes-día
   const manejarEnvio = (e) => {
     e.preventDefault();
+
+    if (fecha < fechaDeHoy()) {
+      setErrorFecha('La fecha no puede ser anterior a hoy');
+      return;
+    }
+
+    setErrorFecha('');
     alert('¡Alerta emitida exitosamente a los productores!');
     navegar('/alerta-detalle');
   };
@@ -86,6 +109,19 @@ function CrearAlerta() {
             <Form.Group className="grupo-campo mb-3" controlId="ubicacion">
               <Form.Label>Ubicación</Form.Label>
               <Form.Control type="text" placeholder="Ej: Parcela #4 - Vereda La Esperanza" required />
+            </Form.Group>
+
+            {/* FECHA DEL EVENTO. No puede ser anterior a hoy */}
+            <Form.Group className="grupo-campo mb-3" controlId="fechaEvento">
+              <Form.Label>Fecha del evento</Form.Label>
+              <Form.Control
+                type="date"
+                value={fecha}
+                onChange={(e) => setFecha(e.target.value)}
+                isInvalid={!!errorFecha}
+                required
+              />
+              {errorFecha && <span className="texto-error">{errorFecha}</span>}
             </Form.Group>
 
             <Form.Group className="grupo-campo mb-3" controlId="descripcion">

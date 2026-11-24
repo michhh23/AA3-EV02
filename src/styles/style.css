@@ -787,6 +787,17 @@ body {
     padding: 14px 45px;
 }
 
+/* MENSAJES DE ERROR DE LAS VALIDACIONES */
+.texto-error {
+    display: block;
+    margin-top: 6px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background-color: #ffe5e5;
+    color: #c0392b;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
 
 /* AJUSTES PARA REACT */
 /* El root y .pagina hacen lo que antes hacía el body */
